@@ -48,7 +48,8 @@ Meteor.methods({
                              nombre:inscriFields.nombre,
                              dni:inscriFields.dni,
                              telefono:inscriFields.telefono,
-                             facultad:inscriFields.facultad }
+                             facultad:inscriFields.facultad,
+                             taller:inscriFields.taller }
                       });
 
      Roles.addUsersToRoles(idUsuario, ['preinscripto']);

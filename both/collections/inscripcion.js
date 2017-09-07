@@ -180,7 +180,7 @@ Schema.InscriSchema = new SimpleSchema({
   facultad: {
        label: "Unidad Academica a la que pertenece ",
        type: String,
-       allowedValues: ['FCEFyN', 'FAUD','FACSO', 'FFHA', 'FI' , 'EIDFS','OTRA']
+       allowedValues: ['FCEFyN', 'FAUD','FACSO', 'FFHA', 'FI' , 'EIDFS','ECLGSM','CCU','OTRA']
         },
   taller:{
          label:"Talleres a los cuales postulo",
@@ -233,7 +233,7 @@ Schema.InscriViewSchema = new SimpleSchema({
   facultad: {
        label: "Facultad a la que pertenece 2",
        type: String,
-       allowedValues: ['FCEFyN', 'FAUD','FACSO', 'FFHA', 'FI','EIDFS', 'ECLGSM','CCU' ]
+       allowedValues: ['FCEFyN', 'FAUD','FACSO', 'FFHA', 'FI','EIDFS', 'ECLGSM','CCU','OTRA' ]
         }
    
 });
