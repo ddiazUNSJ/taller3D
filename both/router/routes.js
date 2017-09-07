@@ -195,6 +195,7 @@ this.route('enroll', {path: '/accounts/enroll/:token'});
  this.route('resetear', {path: '/accounts/resetear'});
  this.route('listp',{path:'/gestionI/listp'});
  this.route('selpreinscri',{path:'gestionI/selpreinscri/selpreinscri'});
+ this.route('landing',{path:'/landing'});
 });
 
 
