@@ -178,10 +178,15 @@ Schema.InscriSchema = new SimpleSchema({
     min: 7
    }, 
   facultad: {
-       label: "Facultad a la que pertenece 1",
+       label: "Unidad Academica a la que pertenece ",
        type: String,
-       allowedValues: ['FCEFyN', 'FAUD','FACSO', 'FFHA', 'FI' ]
-        }
+       allowedValues: ['FCEFyN', 'FAUD','FACSO', 'FFHA', 'FI' , 'EIDFS','OTRA']
+        },
+  taller:{
+         label:"Talleres a los cuales postulo",
+         type:String,
+          allowedValues: ["Taller 1 y Taller 2", "Taller 1","Taller 2"]
+  }      
    
 });
 

@@ -57,7 +57,7 @@ Meteor.methods({
       Email.send({
       to: EmailConfig.settings.receiver, //Receiver
       from: inscriFields.email, //Sender
-      subject: inscriFields.email + ' se ha pre-incripto al curso', //Subject
+      subject: inscriFields.email + ' se ha pre-incripto al seminario', //Subject
       text: "nombre: "+ inscriFields.nombre + "," +" dni: "+inscriFields.dni+ "," +" facultad: "+inscriFields.facultad//Message
     });    
 
@@ -67,19 +67,25 @@ Meteor.methods({
        // Configurar templates de email
       Accounts.emailTemplates.siteName = "3DPrintingDay";
       
-      Accounts.emailTemplates.from = "Inscripciones taller 3D <preinscripciones@3dprintingday.tk>";
+      Accounts.emailTemplates.from = "Inscripciones seminario de impresion 3D <preinscripciones@3dprintingday.tk>";
       Accounts.emailTemplates.enrollAccount.subject = function (user) {
-          return "Hola "+ user.profile.nombre+ " le damos la bienvenida a nuestro primer taller de impresion  3D " ;
+          return "Hola "+ user.profile.nombre+ " le damos la bienvenida al seminario de tecnologias de impresion  3D " ;
       };
-      Accounts.emailTemplates.enrollAccount.text = function (user, url) {
-       return "Antes que nada le agradecemos el interes por este taller. Le comunicamos que el cupo disponible "
-        +"para el taller ha sido ampliamente superado. Este suceso nos llena de satisfaccion, debido a  este " 
-        +"hecho hemos decidido agregar (3) tres instancias mas  del taller. Estas instancias seran dictadas "  
-        +"con fecha tentativa en los meses de marzo-abril. Por lo tanto para mantenerle informado de las fechas "
-        +"reales del dictado y de otras gestiones administrativas le hemos creado una cuenta en nuestro sitio web. "
+      // Accounts.emailTemplates.enrollAccount.text = function (user, url) {
+      //  return "Antes que nada le agradecemos el interes por este taller. Le comunicamos que el cupo disponible "
+      //   +"para el taller ha sido ampliamente superado. Este suceso nos llena de satisfaccion, debido a  este " 
+      //   +"hecho hemos decidido agregar (3) tres instancias mas  del taller. Estas instancias seran dictadas "  
+      //   +"con fecha tentativa en los meses de marzo-abril. Por lo tanto para mantenerle informado de las fechas "
+      //   +"reales del dictado y de otras gestiones administrativas le hemos creado una cuenta en nuestro sitio web. "
+      //   +"Para activar la misma, simplemente haga click en el link que se muestra a continuación "
+      //   + url;
+      // };
+       Accounts.emailTemplates.enrollAccount.text = function (user, url) {
+       return "Antes que nada le agradecemos el interes por este seminario. " 
+        + "Para mantenerlo a Usted informado sobre tu postulacion y otras gestiones administrativas "
+        +"le hemos creado una cuenta en nuestro sitio web. "
         +"Para activar la misma, simplemente haga click en el link que se muestra a continuación "
         + url;
-
       };
 console.log("preparado para enviar url");// console.log(url); 
       //enviando email a usuario
@@ -112,12 +118,12 @@ console.log("preparado para enviar url");// console.log(url);
          
           Accounts.emailTemplates.siteName = "3DPrintingDay";
           
-          Accounts.emailTemplates.from = "Taller 3D <preinscripciones@3dprintingday.tk>";
+          Accounts.emailTemplates.from = "Seminario impresion 3D <preinscripciones@3dprintingday.tk>";
           Accounts.emailTemplates.resetPassword.subject = function (usuario) {
               return "Solicitud de cambio de password ";
            };
           Accounts.emailTemplates.resetPassword.text = function (usuario, url) {
-           return "Hola "+ usuario.profile.nombre+ ", muchas gracias por ponerte en contacto con el equipo del taller de impresion  3D. Has solicitado un cambio de password, simplemente "
+           return "Hola "+ usuario.profile.nombre+ ", muchas gracias por ponerte en contacto con el equipo del seminario taller de impresion  3D. Has solicitado un cambio de password, simplemente "
            +" para efectuar el cambio hace click en el link que se muestra a continuación "
            + url;
            };
